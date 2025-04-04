@@ -1,14 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnqx6gq88fs0d"]
+[gd_scene load_steps=6 format=3 uid="uid://dnqx6gq88fs0d"]
 
 [ext_resource type="Texture2D" uid="uid://bip8sfsjk8g3x" path="res://assets/icon.svg" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://87blneiwdr7k" path="res://scenes/Player.cs" id="1_g2els"]
+[ext_resource type="Script" uid="uid://cemsaey68qmr5" path="res://scenes/PlayerController.cs" id="3_dqkch"]
+[ext_resource type="Script" uid="uid://bq0xv052g6fgh" path="res://scenes/PlayerSignalBus.cs" id="4_qlg0r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
 radius = 62.0081
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_g2els")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_3vyb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_g2els")
+
+[node name="PlayerController" type="Node" parent="."]
+script = ExtResource("3_dqkch")
+
+[node name="PlayerSignalBus" type="Node" parent="."]
+script = ExtResource("4_qlg0r")
