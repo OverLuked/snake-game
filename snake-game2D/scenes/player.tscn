@@ -10,7 +10,7 @@ radius = 62.0081
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
-Speed = 7.5
+Speed = 150.0
 IsAlive = true
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
@@ -19,8 +19,9 @@ texture = ExtResource("1_3vyb7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_g2els")
 
-[node name="PlayerController" type="Node" parent="."]
+[node name="PlayerController" type="Node" parent="." node_paths=PackedStringArray("_player")]
 script = ExtResource("3_dqkch")
+_player = NodePath("..")
 
 [node name="PlayerSignalBus" type="Node" parent="."]
 script = ExtResource("4_qlg0r")
