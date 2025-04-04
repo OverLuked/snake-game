@@ -7,9 +7,9 @@
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_o5qli")]
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(225, 51)
 scale = Vector2(0.554688, 0.4375)
 texture = ExtResource("2_0wfyh")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_o5qli")]

@@ -5,8 +5,8 @@
 [ext_resource type="Script" uid="uid://cemsaey68qmr5" path="res://scenes/PlayerController.cs" id="3_dqkch"]
 [ext_resource type="Script" uid="uid://bq0xv052g6fgh" path="res://scenes/PlayerSignalBus.cs" id="4_qlg0r"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
-radius = 62.0081
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
+size = Vector2(57.383, 49.7195)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
@@ -14,10 +14,14 @@ Speed = 150.0
 IsAlive = true
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_3vyb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_g2els")
+position = Vector2(9.53674e-07, 0.5)
+scale = Vector2(1.01075, 1.18666)
+shape = SubResource("RectangleShape2D_dqkch")
 
 [node name="PlayerController" type="Node" parent="." node_paths=PackedStringArray("_player")]
 script = ExtResource("3_dqkch")

@@ -19,6 +19,15 @@ config/icon="res://assets/icon.svg"
 
 WorldLogic="*res://core/WorldLogic.cs"
 
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=720
+window/size/resizable=false
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/stretch/scale_mode="integer"
+
 [dotnet]
 
 project/assembly_name="New Game Project"
