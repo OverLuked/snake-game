@@ -11,8 +11,12 @@ config_version=5
 [application]
 
 config/name="New Game Project"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://assets/icon.svg"
+
+[autoload]
+
+WorldLogic="*res://core/WorldLogic.cs"
 
 [dotnet]
 
