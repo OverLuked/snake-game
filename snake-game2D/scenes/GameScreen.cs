@@ -9,12 +9,4 @@ public partial class GameScreen : Camera2D
     {
         GD.Print("GameScreen is Working!");
     }
-
-    public override void _Process(double delta)
-    {
-        if (!_player.IsOnScreen)
-        {
-            GD.Print("Player left the screen");
-        }
-    }
 }

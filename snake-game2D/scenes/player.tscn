@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnqx6gq88fs0d"]
+[gd_scene load_steps=6 format=3 uid="uid://dnqx6gq88fs0d"]
 
 [ext_resource type="Texture2D" uid="uid://bip8sfsjk8g3x" path="res://assets/icon.svg" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://87blneiwdr7k" path="res://scenes/Player.cs" id="1_g2els"]
 [ext_resource type="Script" uid="uid://cemsaey68qmr5" path="res://scenes/PlayerController.cs" id="3_dqkch"]
 [ext_resource type="Script" uid="uid://bq0xv052g6fgh" path="res://scenes/PlayerSignalBus.cs" id="4_qlg0r"]
-[ext_resource type="Script" uid="uid://djll0w3dap34g" path="res://scenes/PlayerVisibility.cs" id="5_qlg0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
 size = Vector2(57.383, 49.7195)
@@ -19,11 +18,6 @@ position = Vector2(0, 1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_3vyb7")
 
-[node name="PlayerVisibility" type="VisibleOnScreenNotifier2D" parent="PlayerSprite"]
-position = Vector2(0, -2)
-scale = Vector2(5.92588, 5.88733)
-script = ExtResource("5_qlg0r")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(9.53674e-07, 0.5)
 scale = Vector2(1.01075, 1.18666)
@@ -35,3 +29,7 @@ _player = NodePath("..")
 
 [node name="PlayerSignalBus" type="Node" parent="."]
 script = ExtResource("4_qlg0r")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="OnExit"]

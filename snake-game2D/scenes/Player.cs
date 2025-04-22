@@ -1,3 +1,7 @@
+
+
+
+
 using Godot;
 using System;
 
@@ -11,5 +15,10 @@ public partial class Player : CharacterBody2D
     public override void _Ready()
     {
         GD.Print("Player Node Ready!");
+    }
+
+    private void OnExit()
+    {
+        GD.Print("Player Exited Screen");
     }
 }
