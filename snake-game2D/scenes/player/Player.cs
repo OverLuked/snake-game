@@ -5,7 +5,6 @@ public partial class Player : CharacterBody2D
 {
     [Export] public float Speed;
     [Export] public bool IsAlive;
-    public bool OnScreen;
 
     private ISignalService _signalService;
     
@@ -19,11 +18,12 @@ public partial class Player : CharacterBody2D
         GD.Print("Player Node Ready!");
     }
 
-    // Signal Player Exit
     private void OnExit()
     {
-        GD.Print("Player Exited Screen");
-        OnScreen = true;
+        var onExitPos = GetPosition();
+        GD.Print(onExitPos); 
+        if (onExitPos.X is >= 550 or <= -550) SetPosition(new Vector2(-onExitPos.X, onExitPos.Y));
+        if (onExitPos.Y is >= 370 or <= -370) SetPosition(new Vector2(onExitPos.X, -onExitPos.Y));
     }
     
     // Signal Player Death
