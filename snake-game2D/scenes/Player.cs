@@ -6,6 +6,8 @@ public partial class Player : CharacterBody2D
     [Export] public float Speed;
     [Export] public bool IsAlive;
 
+    public bool IsOnScreen;
+
     public override void _Ready()
     {
         GD.Print("Player Node Ready!");
