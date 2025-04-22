@@ -1,15 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://bcuteioft3svd"]
 
 [ext_resource type="PackedScene" uid="uid://dnqx6gq88fs0d" path="res://scenes/player.tscn" id="1_o5qli"]
-[ext_resource type="Script" uid="uid://daaniib6ndrxd" path="res://scenes/Main.cs" id="1_sugp2"]
+[ext_resource type="Script" uid="uid://dkd022wtqrjy0" path="res://scenes/GameScreen.cs" id="1_sugp2"]
 [ext_resource type="Texture2D" uid="uid://bip8sfsjk8g3x" path="res://assets/icon.svg" id="2_0wfyh"]
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("_camera", "_player")]
-script = ExtResource("1_sugp2")
-_camera = NodePath("Camera2D")
-_player = NodePath("Player")
+[node name="Main" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="GameScreen" type="Camera2D" parent="." node_paths=PackedStringArray("_player")]
+script = ExtResource("1_sugp2")
+_player = NodePath("../Player")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(225, 51)
@@ -17,3 +16,5 @@ scale = Vector2(0.554688, 0.4375)
 texture = ExtResource("2_0wfyh")
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(1.19209e-07, 0)
+scale = Vector2(1, 1)
