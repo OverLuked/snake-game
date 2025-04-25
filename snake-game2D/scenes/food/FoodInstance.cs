@@ -5,21 +5,9 @@ public partial class FoodInstance : Node2D
 {
     [Export] private Sprite2D _body;
     [Export] private CollisionShape2D _hitBox;
-    [Export] private Food Data {get; set;}
+    [Export] private Food Data { get; set; }
 
     private ISignalService _signalService;
-
-
-    public override void _Ready()
-    {
-        base._Ready();
-    }
-
-    // Inject signal service
-    public void Inject(ISignalService signalService)
-    {
-        _signalService = signalService;
-    }
 
     public void Initialize(Food food)
     {
@@ -27,14 +15,19 @@ public partial class FoodInstance : Node2D
         if (_body != null) _body.Texture = food.Texture;
     }
 
-    public void Eaten(Node2D area)
+    public void Inject(ISignalService signalService)
     {
-        GD.Print("Player entered food");
+        _signalService = signalService;
+        signalService.ConnectSignal("FoodEaten", this, nameof (Eaten));
     }
     
-    // Private Methods
-    private void ConnectSignals()
+
+    public void Eaten(Node2D body)
     {
-        _signalService?.ConnectSignal("FoodEaten", this, nameof(Eaten));
+        if (body is not Player || _signalService == null) return;
+
+        GD.Print("FoodInstance: Player entered food area");
+        QueueFree();
+        _signalService.EmitSignal(signalName: "FoodEaten");
     }
 }

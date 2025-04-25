@@ -32,8 +32,8 @@ public partial class Player : CharacterBody2D
         GD.Print("Player Dead! Game Over!");
     }
 
-    private void ConnectSignals()
-    {
-        _signalService?.ConnectSignal("PlayerDeath", this, nameof(OnPlayerDeath));
-    }
+    // private void ConnectSignals()
+    // {
+    //     _signalService?.ConnectSignal("PlayerDeath", this, nameof(OnPlayerDeath));
+    // }
 }

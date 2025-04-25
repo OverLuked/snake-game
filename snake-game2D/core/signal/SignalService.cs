@@ -5,7 +5,7 @@ public partial class SignalService : Node, ISignalService
 {
 
     private Dictionary<string, Signal> _signals = new();
-
+    
     // Signal Interface Management
     public void ConnectSignal(string signalName, GodotObject target, string methodName)
     {
