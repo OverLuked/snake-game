@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Food" load_steps=3 format=3 uid="uid://2u4oly6i70f1"]
+
+[ext_resource type="Texture2D" uid="uid://bip8sfsjk8g3x" path="res://assets/icon.svg" id="1_l3n4l"]
+[ext_resource type="Script" uid="uid://chijxcgxev70i" path="res://data/food/Food.cs" id="2_858ab"]
+
+[resource]
+script = ExtResource("2_858ab")
+Name = "Cherry"
+Point = 1
+Texture = ExtResource("1_l3n4l")
+metadata/_custom_type_script = "uid://chijxcgxev70i"
