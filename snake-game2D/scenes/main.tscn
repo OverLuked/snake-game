@@ -1,17 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcuteioft3svd"]
+[gd_scene load_steps=5 format=3 uid="uid://bcuteioft3svd"]
 
 [ext_resource type="PackedScene" uid="uid://dnqx6gq88fs0d" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://cw4wxhuo3353p" path="res://core/signal/SingalService.cs" id="1_sugp2"]
+[ext_resource type="Script" uid="uid://dv7v0ygqdnyr7" path="res://core/manager/FoodSpawner.cs" id="1_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://df1d6ouxgb51y" path="res://scenes/food/FoodInstance.tscn" id="2_tefeu"]
 
 [node name="Main" type="Node2D"]
+
+[node name="WorldManager" type="Node" parent="."]
+
+[node name="FoodSpawner" type="Node" parent="."]
+script = ExtResource("1_tbgi4")
+FoodInstance = ExtResource("2_tefeu")
+FoodFolder = "res://data/food/"
 
 [node name="SingalService" type="Node" parent="."]
 script = ExtResource("1_sugp2")
 
 [node name="GameScreen" type="Camera2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(225, 51)
-scale = Vector2(0.554688, 0.4375)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_o5qli")]

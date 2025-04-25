@@ -17,7 +17,7 @@ config/icon="res://assets/icon.svg"
 
 [autoload]
 
-WorldLogic="*res://core/WorldLogic.cs"
+WorldLogic="*res://core/WorldManager.cs"
 
 [display]
 
