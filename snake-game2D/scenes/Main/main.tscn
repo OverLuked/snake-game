@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcuteioft3svd"]
+[gd_scene load_steps=5 format=3 uid="uid://bcuteioft3svd"]
 
 [ext_resource type="PackedScene" uid="uid://dnqx6gq88fs0d" path="res://scenes/player/player.tscn" id="1_o5qli"]
-[ext_resource type="Script" uid="uid://cw4wxhuo3353p" path="res://core/signal/SignalService.cs" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://dv7v0ygqdnyr7" path="res://core/manager/FoodSpawner.cs" id="1_tbgi4"]
 [ext_resource type="Script" uid="uid://3l65li42gmh4" path="res://scenes/Main/Main.cs" id="1_tefeu"]
 [ext_resource type="PackedScene" uid="uid://df1d6ouxgb51y" path="res://scenes/food/FoodInstance.tscn" id="2_tefeu"]
@@ -13,9 +12,6 @@ script = ExtResource("1_tefeu")
 script = ExtResource("1_tbgi4")
 FoodInstance = ExtResource("2_tefeu")
 FoodFolder = "res://data/food/"
-
-[node name="SignalService" type="Node" parent="."]
-script = ExtResource("1_sugp2")
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
 position = Vector2(-124, 20)
