@@ -3,7 +3,6 @@ using System;
 
 public partial class Main : Node
 {
-    
     private FoodSpawner _spawner;
     private bool _isFoodSpawned = false;
 
@@ -12,7 +11,7 @@ public partial class Main : Node
         GetNode<SignalBus>("/root/SignalBus").OnEaten += OnFoodEaten;
         _spawner = GetNode<FoodSpawner>("/root/Main/FoodSpawner");
         
-        GD.Print("Main Ready!" + GetPath());
+        GD.Print("Main: Ready!" + GetPath());
     }
 
     public override void _Process(double delta)

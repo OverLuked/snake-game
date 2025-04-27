@@ -16,6 +16,7 @@ public partial class FoodInstance : Node2D
     public override void _Ready()
     {
         GetNode<SignalBus>("/root/SignalBus").OnEaten += Eaten;
+        GD.Print("FoodInstance: Ready!");
     }
 
     

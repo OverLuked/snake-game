@@ -12,7 +12,7 @@ public partial class FoodSpawner : Node
 
     public override void _Ready()
     {
-        GD.Print("Food spawner Ready!");
+        GD.Print("FoodSpawner: Ready!");
         
         // Load food resource
         var dir = DirAccess.Open(FoodFolder);

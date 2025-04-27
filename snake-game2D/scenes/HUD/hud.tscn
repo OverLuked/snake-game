@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnflonkqe6ubl"]
+
+[ext_resource type="Script" uid="uid://ck7jc5oo4k4og" path="res://scenes/HUD/Hud.cs" id="1_c0cnr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l2usv"]
+font_size = 24
+
+[node name="HUD" type="Control" node_paths=PackedStringArray("_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c0cnr")
+_label = NodePath("Label")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 71.0
+text = "0
+"
+label_settings = SubResource("LabelSettings_l2usv")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

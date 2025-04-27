@@ -11,7 +11,7 @@ public partial class PlayerController : Node
     
     public override void _Ready()
     {
-        GD.Print("Player Controller Ready!");
+        GD.Print("PlayerController: Ready!");
     }
 
     public override void _PhysicsProcess(double delta)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcuteioft3svd"]
+[gd_scene load_steps=6 format=3 uid="uid://bcuteioft3svd"]
 
 [ext_resource type="PackedScene" uid="uid://dnqx6gq88fs0d" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://dv7v0ygqdnyr7" path="res://core/manager/FoodSpawner.cs" id="1_tbgi4"]
 [ext_resource type="Script" uid="uid://3l65li42gmh4" path="res://scenes/Main/Main.cs" id="1_tefeu"]
+[ext_resource type="PackedScene" uid="uid://dnflonkqe6ubl" path="res://scenes/HUD/hud.tscn" id="2_rdp1x"]
 [ext_resource type="PackedScene" uid="uid://df1d6ouxgb51y" path="res://scenes/food/FoodInstance.tscn" id="2_tefeu"]
 
 [node name="Main" type="Node2D"]
@@ -17,3 +18,16 @@ FoodFolder = "res://data/food/"
 position = Vector2(-124, 20)
 
 [node name="GameScreen" type="Camera2D" parent="."]
+
+[node name="HUD" parent="." instance=ExtResource("2_rdp1x")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -17.0
+offset_top = -345.0
+offset_right = 17.0
+offset_bottom = -314.0
+grow_horizontal = 1
+grow_vertical = 1
+size_flags_horizontal = 4
+size_flags_vertical = 4
