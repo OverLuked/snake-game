@@ -18,11 +18,12 @@ public partial class Hud : Control
 
     private void UpdateScore(GodotObject foodObj)
     {
-        if (foodObj is FoodInstance { Data: not null })
+        if (foodObj is FoodInstance { Data: not null } foodInstance)
         {
-            _score += 1;
+            _score += foodInstance.Data.Point;
             _label.SetText(_score.ToString());
             GD.Print("Hud: Score Updated!");
+            GD.Print("Hud: Player ate ", foodInstance.Data.Name);
         } else GD.PrintErr("Hud: Invalid foodObj, unable to update score");
     }
 }

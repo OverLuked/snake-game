@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://df1d6ouxgb51y"]
+[gd_scene load_steps=4 format=3 uid="uid://df1d6ouxgb51y"]
 
 [ext_resource type="Script" uid="uid://cvtnt1svj28rn" path="res://scenes/food/FoodInstance.cs" id="1_x37aj"]
-[ext_resource type="Resource" uid="uid://2u4oly6i70f1" path="res://data/food/Cherry.tres" id="2_sox1h"]
 [ext_resource type="Texture2D" uid="uid://bip8sfsjk8g3x" path="res://assets/icon.svg" id="3_jl85m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jl85m"]
@@ -11,7 +10,6 @@ size = Vector2(110, 110)
 script = ExtResource("1_x37aj")
 _body = NodePath("Body")
 _hitBox = NodePath("Area2D/CollisionShape2D")
-Data = ExtResource("2_sox1h")
 
 [node name="Body" type="Sprite2D" parent="."]
 texture = ExtResource("3_jl85m")

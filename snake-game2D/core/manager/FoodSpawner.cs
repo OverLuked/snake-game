@@ -6,9 +6,9 @@ public partial class FoodSpawner : Node
 {
     [Export] public PackedScene FoodInstance;
     [Export] public Vector2 SpawnArea = new Vector2(550, 370); 
-    [Export] public String FoodFolder;
+    [Export] public string FoodFolder;
 
-    private List<Food> _food = [];
+    private readonly List<Food> _food = [];
 
     public override void _Ready()
     {
@@ -33,7 +33,7 @@ public partial class FoodSpawner : Node
         }
 
         dir.ListDirEnd();
-        GD.Print(_food.Count);
+        GD.Print("FoodSpawner:  # of Food found = ", _food.Count);
     }
 
     public void SpawnFood()
