@@ -5,14 +5,8 @@ public partial class Player : CharacterBody2D
 {
     [Export] public float Speed;
     [Export] public bool IsAlive;
-
-    private ISignalService _signalService;
     
-    // Inject signal service
-    public void Inject(ISignalService signalService)
-    {
-        _signalService = signalService;
-    }
+    
     public override void _Ready()
     {
         GD.Print("Player Node Ready!");

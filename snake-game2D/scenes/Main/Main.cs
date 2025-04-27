@@ -3,8 +3,7 @@ using System;
 
 public partial class Main : Node
 {
-
-    private ISignalService _iSignalService;
+    
     private FoodSpawner _spawner;
     private bool _isFoodSpawned = false;
 
