@@ -15,7 +15,7 @@ public partial class Player : CharacterBody2D
     private void OnExit()
     {
         var onExitPos = GetPosition();
-        GD.Print(onExitPos); 
+        GD.Print("Player: Exit location: ", onExitPos); 
         if (onExitPos.X is >= 550 or <= -550) SetPosition(new Vector2(-onExitPos.X, onExitPos.Y));
         if (onExitPos.Y is >= 370 or <= -370) SetPosition(new Vector2(onExitPos.X, -onExitPos.Y));
     }
