@@ -15,6 +15,10 @@ run/main_scene="uid://bcuteioft3svd"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
+[autoload]
+
+SignalBus="*res://core/signal/SignalBus.cs"
+
 [display]
 
 window/size/viewport_width=1080

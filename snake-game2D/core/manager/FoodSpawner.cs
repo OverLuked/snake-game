@@ -36,7 +36,7 @@ public partial class FoodSpawner : Node
         GD.Print(_food.Count);
     }
 
-    public void SpawnFood(ISignalService signalService)
+    public void SpawnFood()
     {
         // spawn food
         if (_food.Count == 0 || FoodInstance == null)
@@ -48,7 +48,6 @@ public partial class FoodSpawner : Node
         var foodResource = _food[GD.RandRange(0, _food.Count - 1)];
         var instance = FoodInstance.Instantiate<FoodInstance>();
         instance.Initialize(foodResource);
-        instance.Inject(signalService);
         
         // Spawn Location
         Vector2 spawnPos = SpawnArea != null

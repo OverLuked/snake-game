@@ -10,22 +10,17 @@ public partial class Main : Node
 
     public override void _Ready()
     {
-        _iSignalService = _iSignalService = GetNode<SignalService>("/root/Main/SignalService");
+        GetNode<SignalBus>("/root/SignalBus").OnEaten += OnFoodEaten;
         _spawner = GetNode<FoodSpawner>("/root/Main/FoodSpawner");
-
-        if (_iSignalService == null)
-        {
-            GD.PrintErr("Main: _iSignalService is null!" + GetPath());
-        }
+        
         GD.Print("Main Ready!" + GetPath());
-        _iSignalService.ConnectSignal("FoodEaten", this, nameof(OnFoodEaten)); 
     }
 
     public override void _Process(double delta)
     {
         if (!_isFoodSpawned)
         {
-            _spawner.SpawnFood(_iSignalService);
+            _spawner.SpawnFood();
             _isFoodSpawned = true;
         }
     }
