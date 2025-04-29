@@ -22,7 +22,6 @@ public partial class Hud : Control
         {
             _score += foodInstance.Data.Point;
             _label.SetText(_score.ToString());
-            GD.Print("Hud: Score Updated!");
             GD.Print("Hud: Player ate ", foodInstance.Data.Name);
         } else GD.PrintErr("Hud: Invalid foodObj, unable to update score");
     }
