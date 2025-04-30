@@ -10,7 +10,7 @@ size = Vector2(57.383, 49.7195)
 script = ExtResource("1_g2els")
 Speed = 150.0
 IsAlive = true
-_distanceOfSegments = 30
+_distanceOfSegments = 12
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 position = Vector2(0, 1)
