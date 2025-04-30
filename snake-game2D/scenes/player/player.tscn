@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dnqx6gq88fs0d"]
+[gd_scene load_steps=4 format=3 uid="uid://dnqx6gq88fs0d"]
 
 [ext_resource type="Texture2D" uid="uid://bip8sfsjk8g3x" path="res://assets/icon.svg" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://87blneiwdr7k" path="res://scenes/player/Player.cs" id="1_g2els"]
-[ext_resource type="PackedScene" uid="uid://dvphxvegtvfdl" path="res://scenes/player/body.tscn" id="2_lvxji"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
 size = Vector2(57.383, 49.7195)
@@ -11,7 +10,7 @@ size = Vector2(57.383, 49.7195)
 script = ExtResource("1_g2els")
 Speed = 150.0
 IsAlive = true
-_body = ExtResource("2_lvxji")
+_distanceOfSegments = 30
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 position = Vector2(0, 1)

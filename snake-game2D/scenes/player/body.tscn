@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvphxvegtvfdl"]
+[gd_scene load_steps=4 format=3 uid="uid://dvphxvegtvfdl"]
 
 [ext_resource type="Texture2D" uid="uid://bip8sfsjk8g3x" path="res://assets/icon.svg" id="1_55htv"]
+[ext_resource type="Script" uid="uid://cvh6jlp46713t" path="res://scenes/player/Body.cs" id="1_es5nh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_es5nh"]
 size = Vector2(116, 120)
 
 [node name="Body" type="CharacterBody2D"]
+script = ExtResource("1_es5nh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_55htv")

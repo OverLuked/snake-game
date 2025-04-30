@@ -7,27 +7,25 @@ public partial class Player : CharacterBody2D
 {
     [Export] public float Speed;
     [Export] public bool IsAlive;
-    [Export] private PackedScene _body;
+    [Export] private int _distanceOfSegments;
+    private PackedScene _body;
     
-
-    private List<CharacterBody2D> _instance;
-    private Vector2 _currentPos;
+    
+    private List<Vector2> _positionHistory = new List<Vector2>();
     private Vector2 _direction;
     private Vector2 _velocity;
+    private int _bodyIndex = 0;
 
     
     public override void _Ready()
     {
         GD.Print("Player: Ready!");
-        _instance = new List<CharacterBody2D>();
+        
+        _body = GD.Load<PackedScene>("res://scenes/player/body.tscn");
+        
         GetNode<SignalBus>("/root/SignalBus").OnEaten += OnEaten;
     }
-
-    public override void _Process(double delta)
-    {
-        _currentPos = Position;
-    }
-
+    
     public override void _PhysicsProcess(double delta)
     {
         // Player Movement
@@ -42,6 +40,16 @@ public partial class Player : CharacterBody2D
             : Velocity.Lerp(Vector2.Zero, 0.5f);
 
         MoveAndSlide();
+        
+        _positionHistory.Insert(0, GlobalPosition);
+
+        if (_bodyIndex != 0)
+        {
+            int positionLength = (_bodyIndex + 1) * _distanceOfSegments;
+        
+            // if (_positionHistory.Count > positionLength) 
+            //     _positionHistory.RemoveRange(positionLength, _positionHistory.Count);
+        }
     }
 
     private void OnExit()
@@ -58,19 +66,30 @@ public partial class Player : CharacterBody2D
     {
         // fix this 
         GD.Print("Player: Adding body");
+        // _instance.Add((Body) _body.Instantiate());
+         // GD.Print("Player: body instance count = ", _instance.Count);
+         
+         // spawnLocation = _instance.Count != 1 
+         //     ? new Vector2(_instance[^1].Position.X, _instance[^1].Position.Y) 
+         //     : new Vector2(_currentPos.X, _currentPos.Y);
         
-        _instance.Add(_body.Instantiate<CharacterBody2D>());
-        GD.Print("Player: body instance count = ", _instance.Count);
+        // AddChild(_instance[^1]);
+        // _instance[^1].SetBody(this, spawnLocation, Velocity);
         
-        // Change to velocity in player direction
-        _instance[^1].Position = _instance.Count != 1 
-            ? new Vector2(_instance[^1].Position.X + 10, _instance[^1].Position.Y + 10) 
-            : new Vector2(_currentPos.X +  10, _currentPos.Y + 10);
-        
-        AddChild(_instance[^1]);
+        var bodySegment = (Body)_body.Instantiate();
+        AddChild(bodySegment);
+
+        int historyIndex = (_bodyIndex + 1) * _distanceOfSegments;
+        bodySegment.SetBody(this, historyIndex);
+        _bodyIndex += 1;
     }
     private void OnDeath(CharacterBody2D body)
     {
         GD.Print("Player Dead! Game Over!");
+    }
+
+    public List<Vector2> GetPositionHisotry()
+    {
+        return _positionHistory;
     }
 }
